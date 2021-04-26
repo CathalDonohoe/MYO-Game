@@ -1,19 +1,21 @@
 # MYO-Game
+
+ 
+Link to Video: https://youtu.be/BtpdREksLD0 
+Link to Project: https://github.com/CathalDonohoe/MYO-Game
+
 Gesture Based User Interfaces
 Introduction
-This project involves developing an application with a Natural User Interface. We have been given the opportunity to combine any number of technologies that we have worked with in the past four years. We can use real-world hardware to prove a concept. We are allowed to reproduce a classic game or system using a gesture-based interface. The application must be an original work, as we will not receive any credit for previous applications. The Technology I decided on using in the end was the MYO Armband. I decided on this as my lecturer had some available, I didn’t own any other forms of gesture interaction, and I had already made a voice-controlled game and wanted to expand upon my skills.
+This project involves developing an application with a Natural User Interface. We have been given the opportunity to combine any number of technologies that we have worked with in the past four years. We can use real-world hardware to prove a concept. We are allowed to reproduce a classic game or system using a gesture-based interface. The application must be an original work, as we will not receive any credit for previous applications. The Technology I decided on using in the end was the MYO Armband. I decided on this as my lecturer had some available, I didn’t own any other forms of gesture interaction, and I had already made a voice-controlled game and wanted to expand upon my skills. I always found Gesture control to be an interesting concept and I seen the MYO Armband as a good opportunity to work on it.
 
 The MYO Armband
-The MYO armband is a gesture controller that uses Medical grade Stainless Steel EMG sensors. These sensors detect eh electrical pulses that the muscles in your arm produce when you move. The armband can be used in a variety of ways, from being used with exiting applications, as a mouse and keyboard for a PC or to be programmed into completely new games, which is what I did with the following.
- 
-
-
+The MYO armband is a gesture controller that uses Medical grade Stainless Steel EMG sensors. These sensors detect the electrical pulses that the muscles in your arm produce when you move. The armband can be used in a variety of ways, from being used with existing applications, such as a mouse and keyboard for a PC or to be programmed into completely new games, which is what I did with the following.
 
 Purpose of the application - design of the application including the screens of the user interface and how it works.
 The purpose of this project is to develop a game with a Natural User Interface. As a developer the first decision I had to make was what type of technology to use to complete this. I decided I would use a combination of the MYO Armband; for moving the player, shooting, and pausing and unpausing the game; and Voice Control; for the menus and for muting the game. I chose MYO due to the wide variety of gestures it has, such as the hand, arm, and arm rotation gestures. 
  
 I then began to look at a wide variety of games that I felt could be improved or complemented with by the MYO armband. I looked at many retro old school games such as Tetris, Pacman, and Streets of Rage. I eventually settled on the idea of developing a Space Invaders like game in Unity. My reasoning for this was how natural the game and the MYO armband sync up together. The wave hand gestures are easy to execute and even easier to understand from a user’s point of view.
-What the Game looks Like
+What the Game looks Like:
 
 Gesture Identified as appropriate for this application 
 I will refer to the diagram above demonstrating all the available gestures that the MYO armband can detect and will explain where I used them in this application. You should be aware that this application is designed with the MYO armband to be worn on the user’s left hand. Therefore, the Wave out will equal to Wave Left and the Wave in will be equal to the Wave right.
@@ -64,7 +66,7 @@ The main hardware used in this project is the MYO Armband. The MYO Armband uses 
 
 
 Voice Recognition
-Voice recognition id a computer software or program that can decode human voice. I use the voice recognition to allow the user to control the menu aspects if the game.
+Voice recognition is a computer software or program that can decode human voice. I use the voice recognition to allow the user to control the menu aspects if the game.
  
 
 Architecture for the solution
@@ -98,7 +100,7 @@ There are many other scripts in the application, but these do not interact with 
 Conclusions & Recommendations
 I am happy with my finished project. I set an objective to create an application in Unity that will implement the MYO Gestures, and that is what I accomplished. I also added some voice recognition for added functionality that I feel really compliments the MYO Gestures making for a fun and interactive experience for the User and the Gamer. My goal was to make a game for everyone to enjoy that tried it, and I believe I achieved that.
 I was very excited to implement the MYO Armband into an application of my own, but unfortunately, I cannot say that the hardware is exactly what I had hoped for it to be. The equipment must be worn in a very specific way to optimally work for the User, and without the proper guidance from someone with this knowledge, the game will more than likely be unplayable for this User. The MYO Armband requires to be work as tight as it can be on the arm, and to be facing a certain way up.
-Once the armband has been played on and has powered on, it must be synced up. This requires the user to place their hand in a certain position and hold, not only can this result in the users hands becoming tiered, as mine often did when working on this project, it must be warmed up once it has synced, and once it has warmed it, it must be re-synced. This can result in the user wearing the band for a solid 10 minutes before they even start the application. This is somewhat understandable as the hardware hasn’t received an update since 2013, but non-the-less, I felt that I should specify my own quarrels when using the hardware.
+Once the armband has been played on and has powered on, it must be synced up. This requires the user to place their hand in a certain position and hold, not only can this result in the users hands becoming tired, as mine often did when working on this project, it must be warmed up once it has synced, and once it has warmed it, it must be re-synced. This can result in the user wearing the band for a solid 10 minutes before they even start the application. This is somewhat understandable as the hardware hasn’t received an update since 2013, but non-the-less, I felt that I should specify my own quarrels when using the hardware.
 Overall, I am still very happy with how the project has turned out and have lost more hours than I care to admit playing the game instead of actually working. The chance to work on something as interesting as this has been fun and I’m pleased with the outcome.
 
 How to Run
