@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar xml:lang="en-US" root="Menu"
+tag-format="semantics/1.0" version="1.0"
+xmlns="http://www.w3.org/2001/06/grammar">
+
+  <rule id="Menu">
+    <one-of>
+      <item>
+        <ruleref uri="#play"/>
+      </item>
+      <item>
+        <ruleref uri="#quit"/>
+      </item>
+	  <item>
+        <ruleref uri="#mute"/>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="play">
+	<item>
+		<tag>out.action = "play";</tag>
+		<one-of>
+	    		<item>play</item>
+				<item>start</item>
+	    		<item>start a new game</item>
+	    		<item>play a new game</item>
+	    		<item>play game</item>
+	    		<item>start game</item>
+		</one-of>
+	</item>
+  </rule>
+
+  <rule id="quit">
+    <item>
+		<tag>out.action = "quit";</tag>
+		<one-of>
+	    		<item>quit</item>
+				<item>close</item>
+	    		<item>quit the game</item>
+	    		<item>close the game</item>
+	    		<item>quit game</item>
+	    		<item>close game</item>
+		</one-of>
+	</item>
+  </rule>
+  
+  <!-- mute rule -->
+  <rule id="mute">
+    <item>
+		<!-- actions for mute -->
+		<tag>out.action = "mute";</tag>
+		<one-of>
+	    		<item>mute</item>
+				<item>sound off</item>
+	    		<item>mute the game</item>
+	    		<item>turn off sound</item>
+	    		<item>no sound</item>
+		</one-of>
+	</item>
+  </rule>
+  
+  <!-- unmute rule -->
+  <rule id="unmute">
+    <item>
+		<!-- actions for unmute -->
+		<tag>out.action = "unmute";</tag>
+		<one-of>
+	    		<item>unmute</item>
+				<item>sound on</item>
+	    		<item>unmute the game</item>
+	    		<item>turn on sound</item>
+		</one-of>
+	</item>
+  </rule>
+
+</grammar>
