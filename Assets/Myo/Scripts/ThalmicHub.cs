@@ -67,9 +67,9 @@ public class ThalmicHub : MonoBehaviour
         // Ensure that there is only one ThalmicHub.
         if (_instance != null) {
 #if UNITY_EDITOR
-            EditorUtility.DisplayDialog("Can only have one ThalmicHub",
-                                        "Your scene contains more than one ThalmicHub. Remove all but one ThalmicHub.",
-                                        "OK");
+            // EditorUtility.DisplayDialog("Can only have one ThalmicHub",
+            //                             "Your scene contains more than one ThalmicHub. Remove all but one ThalmicHub.",
+            //                             "OK");
 #endif
             Destroy (this.gameObject);
             return;

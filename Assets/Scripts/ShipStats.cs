@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ShipStats
 {
+    //Declaration of Variables
     [Range(1,5)]
     public int maxzHealth;
     [HideInInspector]

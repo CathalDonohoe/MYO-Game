@@ -9,6 +9,7 @@ using VibrationType = Thalmic.Myo.VibrationType;
 
 public class Player : MonoBehaviour
 {
+    //Declaration of Variables
     public ShipStats shipStats;
     public GameObject bulletPrefab;
     public AudioClip shootsfx;
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        //sets the game stats on load
         shipStats.currentHealth = shipStats.maxzHealth;
         shipStats.currentLives = shipStats.maxLives;
 
@@ -54,7 +56,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-// Access the ThalmicMyo component attached to the Myo game object.
+        //for keyboard movement
+        if(Input.GetKey(KeyCode.A) && transform.position.x > MAX_LEFT ){
+            transform.Translate(Vector2.left * Time.deltaTime * shipStats.shipSpeed);
+            
+
+        }
+
+        else if(Input.GetKey(KeyCode.D)&& transform.position.x < MAX_RIGHT){
+            transform.Translate(Vector2.right * Time.deltaTime * shipStats.shipSpeed);
+            
+        }
+
+        else if(Input.GetKey(KeyCode.Space) && !isShooting ){
+            StartCoroutine(Shoot());
+        }
+
+        // Access the ThalmicMyo component attached to the Myo game object.
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
          if (thalmicMyo.pose != _lastPose) {
             _lastPose = thalmicMyo.pose;
@@ -88,6 +106,8 @@ public class Player : MonoBehaviour
                 //ExtendUnlockAndNotifyUserAction (thalmicMyo);
             }
          }
+
+
 
          
 
@@ -127,6 +147,7 @@ public class Player : MonoBehaviour
 
     }
 
+    //for player to take damage
     private void TakeDamage()
     {
         shipStats.currentHealth--;
@@ -153,6 +174,7 @@ public class Player : MonoBehaviour
     }
 
 
+    //coroutine for player to shoot bullet
     private IEnumerator Shoot(){
         isShooting = true;
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
@@ -161,6 +183,7 @@ public class Player : MonoBehaviour
         isShooting = false;
     }
 
+    //coroutine for player to respawn
     private IEnumerator Respawn()
     {
         transform.position = offScreenPos;
@@ -174,6 +197,7 @@ public class Player : MonoBehaviour
         UIManager.UpdateHealthBar(shipStats.currentHealth);
     }
 
+    //for damage control
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("EnemyBullet"))

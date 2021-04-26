@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//a method used for controlling the audio in game
 public class AudioManager : MonoBehaviour
 {
+    //Declaration of Variables
     private static AudioManager instance;
     private bool muted;
     public AudioSource battleMusicSource;
@@ -41,6 +43,7 @@ public class AudioManager : MonoBehaviour
     }
     
 
+    //mehtod to play enemy sound
     public static void PlayBattleMusic()
     {
         instance.delay = 1;
@@ -49,12 +52,14 @@ public class AudioManager : MonoBehaviour
         instance.StartCoroutine(instance.BattleSound());
     }
 
+    //method to stop the enemy sound
     public static void StopBattleMusic()
     {
         instance.isPlaying = false;
         instance.StopCoroutine(instance.BattleSound());
     }
 
+    //plays a sound effect
     public static void PlaySoundEffect(AudioClip clip)
     {
         if(!instance.muted)
@@ -63,6 +68,7 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    //makes sound play quicker with less enemies
     public static void UpdateBattleMusic(int i)
     {
         float delayTime = i * DELAY_TICK;
@@ -76,6 +82,7 @@ public class AudioManager : MonoBehaviour
         instance.delay = delayTime;
     }
 
+    //coroutine for playing enemy sound to form music
     private IEnumerator BattleSound()
     {
         while (isPlaying)

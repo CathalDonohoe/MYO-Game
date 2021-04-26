@@ -5,17 +5,20 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
 
+    //Declaration of Variables
     public Sprite[] states;
 
-    private int health;
+    public static int health;
     private SpriteRenderer sr;
 
-    void Start()
+    void Awake()
     {
         health = 4;    
         sr = GetComponent<SpriteRenderer>();
+        sr.sprite = states[health];
     }
 
+    //shifts number in array, causing sprite to change
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("EnemyBullet"))

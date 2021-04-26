@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackgroundScroll : MonoBehaviour
 {
+    //Declaration of Variables
     public float scrollSpeed;
 
     private Renderer rend;

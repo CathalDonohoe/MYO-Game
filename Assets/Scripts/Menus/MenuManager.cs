@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    //Declaration of Variables
     public GameObject mainMenu;
     public GameObject gameOverMenu;
     public GameObject inGameMenu;
@@ -27,18 +29,21 @@ public class MenuManager : MonoBehaviour
     }
 
 
+    //opens menu UI
     public void OpenMainMenu()
     {
         instance.mainMenu.SetActive(true);
         instance.inGameMenu.SetActive(false);
     }
 
+    //opens game over UI
     public static void OpenGameOver()
     {
         instance.gameOverMenu.SetActive(true);
         instance.inGameMenu.SetActive(false);
     }
 
+    //opens game UI
     public void OpenInGame()
     {
         Time.timeScale = 1;
@@ -50,6 +55,7 @@ public class MenuManager : MonoBehaviour
         GameManager.SpawnNewWave();
     }
 
+    //opens in game UI for voice recognition
     public static void OpenInGameSpeech()
     {
         Time.timeScale = 1;
@@ -66,6 +72,8 @@ public class MenuManager : MonoBehaviour
     {
         ReturnToMainMenu();
     }
+
+    //opens pause UI
     public void OpenPause()
     {
         AudioManager.PlaySoundEffect(pausesfx);
@@ -74,6 +82,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    //opens pause UI for voice recognition
     public static void OpenPauseMyo()
     {
         instance.inGameMenu.SetActive(false);
@@ -81,6 +90,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    //opens menu UI
     public void ReturnToMainMenu()
     {
         AudioManager.PlaySoundEffect(menusfx);
@@ -92,6 +102,7 @@ public class MenuManager : MonoBehaviour
         GameManager.CancelGame();
     }
 
+    //close pause UI
     public void ClosePause()
     {
         AudioManager.PlaySoundEffect(unpausesfx);
@@ -100,6 +111,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    //close pause UI with MYO
     public static void ClosePauseMyo()
     {
         instance.inGameMenu.SetActive(true);
@@ -107,8 +119,17 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+
+    //Closes a UI window
     public static void CloseWindow(GameObject go)
     {
         go.SetActive(false);
+    }
+
+    //restarts scene
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

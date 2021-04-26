@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Declaration of Variables
     public GameObject[] allAliensSets;
 
     private GameObject currentSet;
@@ -35,11 +36,14 @@ public class GameManager : MonoBehaviour
         UIManager.ResetUI();
         AudioManager.StopBattleMusic();
     }
+
+    //starts a couroutine to spawn a new wave
     public static void SpawnNewWave()
     {
         instance.StartCoroutine(instance.SpawnWave());
     }
 
+    //method to spawn wave
     private IEnumerator SpawnWave()
     {
         AudioManager.UpdateBattleMusic(1);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AlienMaster : MonoBehaviour
 {
 
+    //Declaration of Variables
     public GameObject bulletPrefab;
     public GameObject motherShip;
 
@@ -33,11 +34,13 @@ public class AlienMaster : MonoBehaviour
     private bool movingRight;
     private bool entering = true;
 
+    //array of alien objects
     public static List<GameObject> allAliens = new List<GameObject>();
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        //adds all the aliens to the array
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Alien"))
             allAliens.Add(go);
     }
@@ -45,6 +48,7 @@ public class AlienMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //moves them faster and onto screen
         if(entering)
         {
             transform.Translate(Vector2.down * Time.deltaTime * 10);
@@ -76,6 +80,7 @@ public class AlienMaster : MonoBehaviour
     }
 
 
+    //method to have aliens move in pattern
     private void MoveEnemies()
     {
         int hitMax = 0;
@@ -108,6 +113,7 @@ public class AlienMaster : MonoBehaviour
         }
     }
 
+    //method for how fast aliens move
     private float GetMoveSpeed()
     {
         float f = allAliens.Count * MOVE_TIME;
@@ -124,6 +130,7 @@ public class AlienMaster : MonoBehaviour
     }
 
 
+    //method for spawning random bullet
     private void Shoot()
     {
         Vector2 pos = allAliens[Random.Range(0, allAliens.Count)].transform.position;
@@ -133,10 +140,12 @@ public class AlienMaster : MonoBehaviour
         shootTimer = SHOOT_TIME;
     }    
     
-
+    //class to spawn mothership
     public void SpawnMothership()
     {
+        //spwans mother ship
         Instantiate(motherShip, mostherShipSpawnPos, Quaternion.identity);
+        //random timer for spawner
         motherShipTimer = Random.Range(MOTHERSHIP_MIN, MOTHERSHIP_MAX);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
+    //Declaration of Variables
     public TextMeshProUGUI scoreText;
     private int score;
 
@@ -37,7 +38,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
+    //changes the colour of the sprites when life lost
     public static void UpdateLives(int l)
     {
         foreach (Image i in instance.lifeSprites)
@@ -49,18 +50,22 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //changes health bar sprite
+
     public static void UpdateHealthBar(int h)
     {
         Debug.Log(h);
         instance.healthBar.sprite = instance.healthBars[h];
     }
 
+    //updates score
     public static void UpdateScore(int s)
     {
         instance.score += s;
         instance.scoreText.text = instance.score.ToString("000,000");
     }
 
+    //resets everything when game started
     public static void ResetUI()
     {
         instance.score = 0;
@@ -69,11 +74,7 @@ public class UIManager : MonoBehaviour
         instance.waveText.text = instance.wave.ToString();
     }
 
-    public static void UpdateHighScore()
-    {
-        //TODO
-    }
-
+    //changes wave number
     public static void UpdateWave()
     {
         instance.wave++;

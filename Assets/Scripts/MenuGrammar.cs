@@ -13,6 +13,7 @@ using UnityEngine.Windows.Speech;   // grammar recogniser
 
 public class MenuGrammar : MonoBehaviour
 {
+    //Declaration of Variables
 
     private bool muted;
 
@@ -29,6 +30,7 @@ public class MenuGrammar : MonoBehaviour
     //loads the xml to be used in the script
     private void Start()
     {
+        
         muted = PlayerPrefs.GetInt("MUTED") == 1;
         AudioListener.pause = muted;
 
